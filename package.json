@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prebuild": "node -e \"const fs = require('fs'); if (!fs.existsSync('./firebase-applet-config.json')) fs.writeFileSync('./firebase-applet-config.json', '{}');\"",
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
