@@ -1,0 +1,6 @@
+{
+  "name": "Exposys Data Labs",
+  "description": "Premium Internship Application Portal for Exposys Data Labs with Stripe integration, student portal, and modern analytics admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

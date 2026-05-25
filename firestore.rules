@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Enable open read/write access for all collections in the safe preview/sandbox environment
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile inside the onboarding platform",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "email", "role", "createdAt"]
+    },
+    "StripeSubscription": {
+      "title": "StripeSubscription",
+      "description": "Premium seat subscription details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "canceled", "past_due", "trialing"] },
+        "planName": { "type": "string" },
+        "amount": { "type": "number" },
+        "currency": { "type": "string" },
+        "interval": { "type": "string", "enum": ["month", "year", "one-time"] },
+        "currentPeriodEnd": { "type": "string", "format": "date-time" },
+        "cardBrand": { "type": "string", "enum": ["visa", "mastercard", "amex", "discover"] },
+        "cardLast4": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "status", "planName", "amount", "currency", "interval", "currentPeriodEnd", "cardBrand", "cardLast4", "createdAt"]
+    },
+    "InternshipApplication": {
+      "title": "InternshipApplication",
+      "description": "Internship and billing application form registration details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "branch": { "type": "string" },
+        "college": { "type": "string" },
+        "tenthPercentage": { "type": "string" },
+        "twelfthPercentage": { "type": "string" },
+        "ug": { "type": "string" },
+        "pg": { "type": "string" },
+        "location": { "type": "string" },
+        "internshipDomain": { "type": "string" },
+        "internshipDuration": { "type": "string" },
+        "linkedin": { "type": "string" },
+        "github": { "type": "string" },
+        "skills": { "type": "string" },
+        "whyHire": { "type": "string" },
+        "resumeUrl": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string", "enum": ["Pending", "Approved", "Rejected", "Completed"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "paymentId": { "type": "string" },
+        "subscription": { "$ref": "StripeSubscription" }
+      },
+      "required": ["id", "userId", "name", "email", "phone", "branch", "college", "tenthPercentage", "twelfthPercentage", "ug", "location", "internshipDomain", "internshipDuration", "status", "createdAt"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "User message and status updates alerts notifications",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "type": { "type": "string", "enum": ["info", "success", "warning"] },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "title", "message", "type", "read", "createdAt"]
+    },
+    "AdminLog": {
+      "title": "AdminLog",
+      "description": "Audit logs compiled for team coordinators and admin operations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "adminId": { "type": "string" },
+        "action": { "type": "string" },
+        "targetUser": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "adminId", "action", "targetUser", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Collection mapping singular system logins and profiles."
+    },
+    "applications/{applicationId}": {
+      "schema": "InternshipApplication",
+      "description": "Cohort registration records."
+    },
+    "notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Targeted advisory notification alerts."
+    },
+    "logs/{logId}": {
+      "schema": "AdminLog",
+      "description": "Administrative actions logger."
+    }
+  }
+}

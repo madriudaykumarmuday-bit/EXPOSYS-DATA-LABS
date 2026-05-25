@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.05);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    background-size: 200% 200%;
+    animation: gradient-shift 12s ease infinite;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+  }
+
+  .stripe-input {
+    border: 1px solid #e2e8f0;
+    background: #fdfdfd;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+    transition: all 0.2s ease;
+  }
+
+  .stripe-input:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.35;
+    animation: float-slow 16s ease-in-out infinite;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* AI Signals Animate Utilities */
+  .ai-bg-pan {
+    animation: pan-slow 60s linear infinite;
+  }
+
+  .ai-signal-pulse {
+    animation: pulse-glowing 4s ease-in-out infinite;
+  }
+
+  .ai-signal-pulse-delayed {
+    animation: pulse-glowing 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .ai-path-flow {
+    stroke-dasharray: 12, 12;
+    animation: path-flow-anim 30s linear infinite;
+  }
+
+  .ai-path-flow-fast {
+    stroke-dasharray: 8, 16;
+    animation: path-flow-anim 15s linear infinite;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.08);
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pan-slow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes pulse-glowing {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes path-flow-anim {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
