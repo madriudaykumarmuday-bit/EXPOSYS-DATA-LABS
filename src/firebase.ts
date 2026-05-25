@@ -3,8 +3,34 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
 import firebaseConfig from '../firebase-applet-config.json';
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId); /* CRITICAL: The app will break without this line */
+// Support Vercel / Production deployment with client-accessible environment variables
+const env = (import.meta as any).env || {};
+
+const envConfig = {
+  apiKey: env.VITE_FIREBASE_API_KEY,
+  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: env.VITE_FIREBASE_APP_ID,
+  measurementId: env.VITE_FIREBASE_MEASUREMENT_ID,
+  firestoreDatabaseId: env.VITE_FIREBASE_DATABASE_ID,
+};
+
+const finalConfig = {
+  apiKey: envConfig.apiKey || firebaseConfig.apiKey,
+  authDomain: envConfig.authDomain || firebaseConfig.authDomain,
+  projectId: envConfig.projectId || firebaseConfig.projectId,
+  storageBucket: envConfig.storageBucket || firebaseConfig.storageBucket,
+  messagingSenderId: envConfig.messagingSenderId || firebaseConfig.messagingSenderId,
+  appId: envConfig.appId || firebaseConfig.appId,
+  measurementId: envConfig.measurementId || firebaseConfig.measurementId,
+};
+
+const databaseId = envConfig.firestoreDatabaseId || firebaseConfig.firestoreDatabaseId;
+
+const app = initializeApp(finalConfig);
+export const db = getFirestore(app, databaseId); /* CRITICAL: The app will break without this line */
 export const auth = getAuth(app);
 
 export enum OperationType {
