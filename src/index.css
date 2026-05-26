@@ -121,6 +121,17 @@
     background: #94a3b8;
   }
 
+  /* Infinite Scrolling Logo Queue (Train Mode) */
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
   /* AI Signals Animate Utilities */
   .ai-bg-pan {
     animation: pan-slow 60s linear infinite;
@@ -189,3 +200,13 @@
     stroke-dashoffset: -1000;
   }
 }
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

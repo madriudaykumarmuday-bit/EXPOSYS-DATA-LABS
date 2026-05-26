@@ -27,6 +27,7 @@ import { signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth';
 
 // Component Imports
 import Navbar from './components/Navbar';
+import CompanyLogosTrain from './components/CompanyLogosTrain';
 import LandingHero from './components/LandingHero';
 import ApplicationForm from './components/ApplicationForm';
 import StudentDashboard from './components/StudentDashboard';
@@ -811,18 +812,21 @@ export default function App() {
       {/* Primary Dynamic Main Views Panels */}
       <div className="flex-1 flex flex-col relative z-10">
         {currentView === 'landing' && (
-          <LandingHero 
-            currentUser={currentUser}
-            onNavigate={setCurrentView}
-            onQuickSignUpAndPay={handleQuickSignUpAndPay}
-            onOpenLogin={() => {
-              setAuthMode('login');
-              setAuthEmail('');
-              setAuthPassword('');
-              setAuthError('');
-              setShowAuthModal(true);
-            }}
-          />
+          <>
+            <CompanyLogosTrain />
+            <LandingHero 
+              currentUser={currentUser}
+              onNavigate={setCurrentView}
+              onQuickSignUpAndPay={handleQuickSignUpAndPay}
+              onOpenLogin={() => {
+                setAuthMode('login');
+                setAuthEmail('');
+                setAuthPassword('');
+                setAuthError('');
+                setShowAuthModal(true);
+              }}
+            />
+          </>
         )}
 
         {currentView === 'apply' && (
