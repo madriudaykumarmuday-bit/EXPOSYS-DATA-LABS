@@ -144,12 +144,9 @@ export default function CompanyLogosTrain() {
       <div className="absolute top-0 left-0 w-16 sm:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-16 sm:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
       
-      <div className="max-w-7xl mx-auto px-6 mb-2 flex items-center justify-between sm:justify-start gap-4">
+      <div className="max-w-7xl mx-auto px-6 mb-2 flex items-center">
         <span className="text-[10px] sm:text-xs font-black text-indigo-600 bg-indigo-50 border border-indigo-200/50 px-2 py-0.5 rounded-md uppercase tracking-wider">
-          Top Placement Partners
-        </span>
-        <span className="text-[10px] text-slate-400 font-semibold hidden sm:inline">
-          Our graduates are hired by elite organizations worldwide
+          OUR CLIENTS
         </span>
       </div>
 
