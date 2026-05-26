@@ -18,21 +18,68 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #0ea5e9, #6366f1, #ec4899);
+    background: linear-gradient(135deg, #0ea5e9, #a855f7, #ec4899, #f59e0b);
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradient-shift 6s ease infinite;
   }
 
   .btn-gradient {
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    background: linear-gradient(135deg, #2563eb, #7c3aed, #db2777);
     background-size: 200% 200%;
-    animation: gradient-shift 12s ease infinite;
+    animation: gradient-shift 6s ease infinite;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .btn-gradient:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 30px -5px rgba(124, 58, 237, 0.5);
+  }
+
+  .btn-gold-gradient {
+    background: linear-gradient(135deg, #f59e0b, #d97706, #b45309);
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-emerald-gradient {
+    background: linear-gradient(135deg, #10b981, #059669, #047857);
+    background-size: 200% 200%;
+    transition: all 0.25s ease;
+  }
+
+  .orange-purple-gradient {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #764ba2);
+  }
+
+  .colorful-card-cyan {
+    border-left: 5px solid #06b6d4;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(236, 254, 255, 0.95));
+    box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+  }
+
+  .colorful-card-purple {
+    border-left: 5px solid #8b5cf6;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(245, 243, 255, 0.95));
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+  }
+
+  .colorful-card-amber {
+    border-left: 5px solid #f59e0b;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(254, 243, 199, 0.8));
+    box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.15);
+  }
+
+  .colorful-card-emerald {
+    border-left: 5px solid #10b981;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(209, 250, 229, 0.6));
+    box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15);
+  }
+
+  .colorful-header-glow {
+    box-shadow: 0 4px 30px rgba(99, 102, 241, 0.15);
   }
 
   .stripe-input {

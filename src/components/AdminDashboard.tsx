@@ -271,22 +271,30 @@ export default function AdminDashboard({
               Domain distribution metrics
             </h3>
 
-            <div className="space-y-3.5 pt-2">
-              {['Data Science', 'Artificial Intelligence', 'Software Development', 'UI/UX Design'].map((domain) => {
-                const count = applications.filter(a => a.internshipDomain === domain).length;
+            <div className="space-y-4 pt-2">
+              {[
+                { name: 'Data Science', color: 'bg-gradient-to-r from-pink-500 to-fuchsia-600', text: 'text-pink-650' },
+                { name: 'Artificial Intelligence', color: 'bg-gradient-to-r from-violet-500 to-purple-650', text: 'text-violet-650' },
+                { name: 'Software Development', color: 'bg-gradient-to-r from-cyan-500 to-blue-600', text: 'text-cyan-705' },
+                { name: 'UI/UX Design', color: 'bg-gradient-to-r from-amber-500 to-orange-600', text: 'text-amber-705' }
+              ].map((domainItem) => {
+                const count = applications.filter(a => a.internshipDomain === domainItem.name).length;
                 const totalCount = applications.length || 1;
                 const percentage = Math.round((count / totalCount) * 100);
 
                 return (
-                  <div key={domain} className="space-y-1">
-                    <div className="flex justify-between text-xs font-bold text-slate-600">
-                      <span>{domain}</span>
+                  <div key={domainItem.name} className="space-y-1">
+                    <div className="flex justify-between text-xs font-bold text-slate-700">
+                      <span className="flex items-center gap-1.5">
+                        <span className={`w-2 h-2 rounded-full ${domainItem.color}`}></span>
+                        {domainItem.name}
+                      </span>
                       <span className="text-slate-400">{count} of {totalCount} ({percentage}%)</span>
                     </div>
-                    {/* Responsive progress bar */}
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                    {/* Responsive progress bar with corresponding colorful color map */}
+                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden shadow-inner">
                       <div 
-                        className="h-full bg-cyan-500 rounded-full transition-all duration-500" 
+                        className={`h-full ${domainItem.color} rounded-full transition-all duration-500`} 
                         style={{ width: `${percentage}%` }}
                       ></div>
                     </div>

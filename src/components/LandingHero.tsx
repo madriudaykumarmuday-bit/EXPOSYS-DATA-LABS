@@ -86,21 +86,22 @@ export default function LandingHero({ currentUser, onNavigate, onQuickSignUpAndP
 
   return (
     <div className="relative overflow-hidden flex-1 flex flex-col items-center">
-      {/* Dynamic Visual Gradient Background Orbs */}
-      <div className="blob w-[320px] h-[320px] bg-cyan-200 -top-10 -left-10 md:w-[450px] md:h-[450px]"></div>
-      <div className="blob w-[350px] h-[350px] bg-purple-200 -bottom-20 -right-10 md:w-[500px] md:h-[500px]"></div>
-      <div className="blob w-[250px] h-[250px] bg-emerald-100 top-1/2 left-1/3"></div>
+      {/* Dynamic Visual Gradient Background Orbs with rich colours */}
+      <div className="blob w-[320px] h-[320px] bg-cyan-400 -top-10 -left-10 md:w-[480px] md:h-[480px] opacity-[0.22] blur-[120px]"></div>
+      <div className="blob w-[350px] h-[350px] bg-fuchsia-400 -bottom-20 -right-10 md:w-[550px] md:h-[550px] opacity-[0.24] blur-[140px]"></div>
+      <div className="blob w-[280px] h-[280px] bg-yellow-300 top-1/3 left-1/3 opacity-[0.18] blur-[130px]"></div>
+      <div className="blob w-[260px] h-[260px] bg-violet-500 bottom-1/3 right-1/4 opacity-[0.16] blur-[110px]"></div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-12 py-12 md:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         
         {/* Left Copy block */}
         <div className="w-full lg:w-7/12 space-y-6 md:space-y-8 text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-100/70 text-cyan-800 text-xs font-bold uppercase tracking-widest select-none">
-            <span className="flex h-2 w-2 relative">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 border border-cyan-300/40 text-cyan-800 text-xs font-black uppercase tracking-widest select-none shadow-sm">
+            <span className="flex h-2.5 w-2.5 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
             </span>
-            December 2026 COHORT ACTIVE
+            <span className="bg-gradient-to-r from-cyan-600 to-indigo-600 bg-clip-text text-transparent">December 2026 COHORT ACTIVE</span>
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight text-slate-900">
@@ -108,14 +109,14 @@ export default function LandingHero({ currentUser, onNavigate, onQuickSignUpAndP
             & <span className="gradient-text animate-pulse">Evolve.</span>
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
-            Join **Exposys Data Labs** and participate in engineering industry-certified tracks. Bridge your collegiate theory with scalable systems, live mentorship, and practical expertise.
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl font-medium">
+            Join <strong className="text-indigo-600">Exposys Data Labs</strong> and participate in engineering industry-certified practices. Bridge your collegiate theory with scalable systems, live mentorship, and practical expertise.
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
             <button 
               onClick={() => onNavigate('apply')}
-              className="px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-indigo-600 font-bold text-white rounded-2xl shadow-lg hover:shadow-cyan-100 hover:scale-[1.01] transition-all"
+              className="px-6 py-3.5 bg-gradient-to-r from-blue-600 via-indigo-600 to-fuchsia-600 font-bold text-white rounded-2xl shadow-xl hover:shadow-indigo-200 hover:scale-[1.02] transform transition-all cursor-pointer font-sans tracking-wide"
             >
               Start Full Application
             </button>
@@ -126,49 +127,49 @@ export default function LandingHero({ currentUser, onNavigate, onQuickSignUpAndP
                   formField.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="px-6 py-3.5 bg-white border border-slate-200 text-slate-700 font-bold rounded-2xl hover:bg-slate-50 transition-all shadow-sm"
+              className="px-6 py-3.5 bg-white border-2 border-slate-200/80 text-slate-700 font-bold rounded-2xl hover:bg-slate-50 hover:border-indigo-400 transition-all shadow-md cursor-pointer font-sans"
             >
               Quick Subscribe Track
             </button>
           </div>
 
-          {/* Quick Metrics */}
-          <div className="flex items-center gap-6 sm:gap-10 pt-6 border-t border-slate-200/50">
+          {/* Quick Metrics styled with fine colors */}
+          <div className="flex items-center gap-6 sm:gap-10 pt-6 border-t border-slate-200/80">
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black text-slate-800">50K+</span>
-              <span className="text-[11px] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider">Students Guided</span>
+              <span className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">50K+</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 font-black uppercase tracking-wider">Students Guided</span>
             </div>
-            <div className="h-8 w-[1px] bg-slate-200"></div>
+            <div className="h-10 w-[2px] bg-gradient-to-b from-cyan-200 to-transparent"></div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black text-slate-800">10+</span>
-              <span className="text-[11px] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider">Research Domains</span>
+              <span className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-fuchsia-600">10+</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 font-black uppercase tracking-wider">Research Domains</span>
             </div>
-            <div className="h-8 w-[1px] bg-slate-200"></div>
+            <div className="h-10 w-[2px] bg-gradient-to-b from-purple-200 to-transparent"></div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black text-slate-800">100%</span>
-              <span className="text-[11px] sm:text-xs text-slate-500 font-semibold uppercase tracking-wider">Verified Creds</span>
+              <span className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">100%</span>
+              <span className="text-[10px] sm:text-xs text-slate-500 font-black uppercase tracking-wider">Verified Creds</span>
             </div>
           </div>
         </div>
 
         {/* Right Stripe Simulated widget block */}
         <div id="enroll-form" className="w-full lg:w-5/12">
-          <div className="glass-card rounded-[32px] p-6 sm:p-8 relative overflow-hidden border border-white/60 shadow-2xl">
+          <div className="glass-card rounded-[32px] p-6 sm:p-8 relative overflow-hidden border-2 border-white shadow-2xl bg-white/70">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <span className="inline-block px-2.5 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-wider mb-2">
+                <span className="inline-block px-2.5 py-1 rounded-md bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm">
                   Stripe Checkout Block
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-800">Professional Cohort</h3>
-                <p className="text-xs text-slate-500 font-medium">Auto-creates student profile</p>
+                <h3 className="text-lg sm:text-xl font-black text-slate-800 tracking-tight">Professional Cohort</h3>
+                <p className="text-xs text-slate-400 font-semibold">Auto-creates student profile</p>
               </div>
               <div className="text-right">
                 <div className="flex items-baseline justify-end gap-1">
-                  <span className="text-2xl sm:text-3xl font-black text-slate-900 leading-none">
+                  <span className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 leading-none">
                     {billingCycle === 'month' ? '₹999' : '₹2,499'}
                   </span>
                 </div>
-                <span className="block text-[10px] text-slate-400 font-bold uppercase tracking-wider mt-1">
+                <span className="block text-[9px] text-slate-400 font-black uppercase tracking-widest mt-1">
                   {billingCycle === 'month' ? 'per month charge' : 'one-time pay'}
                 </span>
               </div>
@@ -179,8 +180,8 @@ export default function LandingHero({ currentUser, onNavigate, onQuickSignUpAndP
               <button
                 type="button"
                 onClick={() => setBillingCycle('month')}
-                className={`py-2 text-xs font-bold rounded-lg transition-all ${
-                  billingCycle === 'month' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                className={`py-2 text-xs font-black rounded-lg transition-all ${
+                  billingCycle === 'month' ? 'bg-white text-blue-700 shadow-md' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
                 Monthly Plan (₹999)
@@ -188,8 +189,8 @@ export default function LandingHero({ currentUser, onNavigate, onQuickSignUpAndP
               <button
                 type="button"
                 onClick={() => setBillingCycle('one-time')}
-                className={`py-2 text-xs font-bold rounded-lg transition-all ${
-                  billingCycle === 'one-time' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                className={`py-2 text-xs font-black rounded-lg transition-all ${
+                  billingCycle === 'one-time' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-500 hover:text-slate-700'
                 }`}
               >
                 Full Access (₹2,499)
