@@ -1,5 +1,5 @@
 import { User } from '../types';
-import { LogOut, LayoutDashboard, FileText, Compass, Briefcase, Award } from 'lucide-react';
+import { LogOut, LayoutDashboard } from 'lucide-react';
 
 interface NavbarProps {
   currentUser: User | null;
@@ -9,9 +9,15 @@ interface NavbarProps {
   onOpenLogin: () => void;
 }
 
-export default function Navbar({ currentUser, currentView, onNavigate, onLogout, onOpenLogin }: NavbarProps) {
+export default function Navbar({ 
+  currentUser, 
+  currentView, 
+  onNavigate, 
+  onLogout, 
+  onOpenLogin
+}: NavbarProps) {
   return (
-    <nav className="h-20 px-6 sm:px-12 flex items-center justify-between border-b border-slate-200/50 bg-white/40 backdrop-blur-md sticky top-0 z-40">
+    <nav className="h-20 px-6 sm:px-12 flex items-center justify-between border-b border-slate-200/50 bg-white/40 backdrop-blur-md sticky top-0 z-40 transition-all duration-300 text-slate-800">
       <div 
         onClick={() => onNavigate('landing')} 
         className="flex items-center gap-3 cursor-pointer group select-none"
@@ -20,10 +26,10 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
           <span className="text-white font-extrabold text-xl">E</span>
         </div>
         <div className="flex flex-col">
-          <span className="font-extrabold text-lg tracking-tight text-slate-800 leading-none">
+          <span className="font-black text-lg tracking-tight leading-none text-slate-800">
             EXPOSYS
           </span>
-          <span className="text-xs text-cyan-600 font-semibold tracking-wider">
+          <span className="text-xs font-semibold tracking-wider uppercase text-cyan-600">
             DATA LABS
           </span>
         </div>
@@ -34,7 +40,9 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
         <button 
           onClick={() => onNavigate('landing')}
           className={`px-3 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-            currentView === 'landing' ? 'text-cyan-600 bg-cyan-50/70 font-bold' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
+            currentView === 'landing' 
+              ? 'bg-cyan-50/70 text-cyan-600 font-bold' 
+              : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
           }`}
         >
           Portal Summary
@@ -43,7 +51,9 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
         <button 
           onClick={() => onNavigate('apply')}
           className={`px-3 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
-            currentView === 'apply' ? 'text-indigo-600 bg-indigo-50/70 font-bold' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
+            currentView === 'apply' 
+              ? 'bg-cyan-50/70 text-cyan-600 font-bold' 
+              : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100/50'
           }`}
         >
           Form & Fees
@@ -55,7 +65,9 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
               <button
                 onClick={() => onNavigate('admin')}
                 className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                  currentView === 'admin' ? 'text-purple-700 bg-purple-50' : 'text-purple-600 hover:bg-purple-50/50'
+                  currentView === 'admin' 
+                    ? 'text-purple-700 bg-purple-50' 
+                    : 'text-purple-600 hover:bg-purple-50/50'
                 }`}
               >
                 <LayoutDashboard className="w-4 h-4" />
@@ -65,7 +77,9 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
               <button
                 onClick={() => onNavigate('dashboard')}
                 className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                  currentView === 'dashboard' ? 'text-blue-700 bg-blue-50' : 'text-blue-600 hover:bg-blue-50/50'
+                  currentView === 'dashboard' 
+                    ? 'bg-cyan-50/70 text-cyan-600 font-bold' 
+                    : 'text-indigo-600 hover:bg-indigo-50/50'
                 }`}
               >
                 <LayoutDashboard className="w-4 h-4" />
@@ -74,27 +88,27 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
             )}
 
             <div className="hidden lg:flex flex-col text-right">
-              <span className="text-xs font-bold text-slate-800 leading-tight block truncate max-w-[120px]">
+              <span className="text-xs font-bold leading-tight block truncate max-w-[120px] text-slate-800">
                 {currentUser.name}
               </span>
-              <span className="text-[10px] text-slate-400 capitalize font-medium">
+              <span className="text-[10px] capitalize font-medium text-slate-400">
                 {currentUser.role} Account
               </span>
             </div>
 
             <button 
               onClick={onLogout}
-              className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-all"
+              className="p-2 rounded-xl transition-all text-slate-400 hover:text-rose-650 hover:bg-rose-50"
               title="Logout session"
             >
-              <LogOut className="w-4 h-4 sm:w-5 h-5" />
+              <LogOut className="w-4 h-4 sm:w-5 h-5 text-rose-500" />
             </button>
           </div>
         ) : (
           <div className="flex items-center gap-2 sm:gap-3">
             <button 
               onClick={() => onNavigate('apply')}
-              className="px-4 py-2 rounded-xl btn-gradient text-white text-xs sm:text-sm font-semibold shadow-md shrink-0"
+              className="px-4 py-2 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold shadow-md shrink-0 transition-transform hover:scale-105 active:scale-95 duration-150"
             >
               Register Track
             </button>

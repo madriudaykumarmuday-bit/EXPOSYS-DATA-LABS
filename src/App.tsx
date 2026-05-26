@@ -741,14 +741,14 @@ export default function App() {
 
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-[#0f172a] font-sans flex flex-col relative overflow-x-hidden antialiased">
+    <div className="min-h-screen font-sans flex flex-col relative overflow-x-hidden antialiased bg-[#f8fafc] text-slate-900">
       
-      {/* Dynamic Animated AI Signals Tech Background Layer with ultra-low opacity to ensure readability */}
+      {/* Dynamic Animated AI Signals Tech Background Layer - clearly visible */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
         
-        {/* Subtle Panning Neural Network Backdrop Pattern */}
+        {/* Subtle Panning Neural Network Backdrop Pattern - Full opacity */}
         <div 
-          className="absolute inset-0 bg-repeat bg-center opacity-[0.11] ai-bg-pan" 
+          className="absolute inset-0 bg-repeat bg-center opacity-100 ai-bg-pan" 
           style={{ 
             backgroundImage: `url('/src/assets/images/ai_signals_bg_1779695437813.png')`,
             backgroundSize: '1100px 1100px',
@@ -756,27 +756,27 @@ export default function App() {
         />
 
         {/* Ambient Gradient Blobs (Glowing Neural Nodes) */}
-        <div className="absolute top-[12%] left-[8%] w-80 h-80 rounded-full bg-cyan-400/[0.12] blur-[110px] ai-signal-pulse" />
-        <div className="absolute bottom-[25%] right-[10%] w-96 h-[380px] rounded-full bg-indigo-500/[0.10] blur-[120px] ai-signal-pulse-delayed" />
+        <div className="absolute top-[12%] left-[8%] w-80 h-80 rounded-full blur-[110px] ai-signal-pulse bg-cyan-400/[0.45]" />
+        <div className="absolute bottom-[25%] right-[10%] w-96 h-[380px] rounded-full bg-indigo-500/[0.40] blur-[120px] ai-signal-pulse-delayed" />
         
         {/* Animated Moving SVG Signals Connectors Grid */}
-        <svg className="absolute inset-0 w-full h-full stroke-cyan-500/[0.12] fill-none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full stroke-cyan-500/[0.65] fill-none" xmlns="http://www.w3.org/2000/svg">
           {/* Signal path 1 */}
-          <path d="M-100 220 C320 160, 420 420, 820 310 S1220 110, 2020 270" strokeWidth="1.2" className="ai-path-flow" />
+          <path d="M-100 220 C320 160, 420 420, 820 310 S1220 110, 2020 270" strokeWidth="2.5" className="ai-path-flow" />
           {/* Signal path 2 */}
-          <path d="M-50 620 S420 390, 920 670 S1520 470, 2070 720" strokeWidth="1.5" className="ai-path-flow-fast" />
+          <path d="M-50 620 S420 390, 920 670 S1520 470, 2070 720" strokeWidth="3" className="ai-path-flow-fast" />
           {/* Signal path 3 */}
-          <path d="M120 -50 C220 420, 620 620, 1120 820 S1720 970, 2120 1120" strokeWidth="1" className="ai-path-flow" />
+          <path d="M120 -50 C220 420, 620 620, 1120 820 S1720 970, 2120 1120" strokeWidth="2" className="ai-path-flow" />
           
           {/* Pulse Signal Nodes overlay */}
-          <circle cx="280" cy="184" r="4.5" className="fill-cyan-400/[0.25] animate-pulse" />
-          <circle cx="682" cy="331" r="6" className="fill-indigo-400/[0.30] animate-pulse" />
-          <circle cx="1120" cy="805" r="5" className="fill-pink-400/[0.25] animate-pulse" />
-          <circle cx="1520" cy="501" r="5.5" className="fill-cyan-400/[0.30] animate-pulse" />
+          <circle cx="280" cy="184" r="6" className="fill-cyan-400 animate-pulse" />
+          <circle cx="682" cy="331" r="7.5" className="fill-indigo-400 animate-pulse" />
+          <circle cx="1120" cy="805" r="6.5" className="fill-pink-400 animate-pulse" />
+          <circle cx="1520" cy="501" r="7" className="fill-cyan-500 animate-pulse" />
         </svg>
 
-        {/* Binary Stream falling code backdrop (Hyper Faded) */}
-        <div className="absolute inset-0 opacity-[0.025] font-mono text-[9px] text-cyan-600 select-none overflow-hidden leading-none p-4 grid grid-cols-6 gap-2">
+        {/* Binary Stream falling code backdrop */}
+        <div className="absolute inset-0 opacity-[0.25] font-mono text-[10px] text-cyan-600 select-none overflow-hidden leading-none p-4 grid grid-cols-6 gap-2">
           {Array.from({ length: 18 }).map((_, i) => (
             <div key={i} className="flex flex-col gap-2.5 whitespace-pre">
               {Array.from({ length: 20 }).map((_, j) => (
