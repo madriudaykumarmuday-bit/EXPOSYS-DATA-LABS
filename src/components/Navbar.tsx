@@ -93,12 +93,6 @@ export default function Navbar({ currentUser, currentView, onNavigate, onLogout,
         ) : (
           <div className="flex items-center gap-2 sm:gap-3">
             <button 
-              onClick={onOpenLogin}
-              className="px-4 py-2 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-100/60 transition-all rounded-xl"
-            >
-              Access Login
-            </button>
-            <button 
               onClick={() => onNavigate('apply')}
               className="px-4 py-2 rounded-xl btn-gradient text-white text-xs sm:text-sm font-semibold shadow-md shrink-0"
             >

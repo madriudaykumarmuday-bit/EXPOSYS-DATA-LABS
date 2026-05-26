@@ -905,17 +905,11 @@ export default function App() {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-cyan-400 mt-1 shrink-0" />
                 <div className="leading-relaxed font-sans text-slate-300">
-                  <span className="font-extrabold text-white block mb-1">Address</span>
-                  P.M.R.Residencey <br/>
-                  Ground floor,no-5/3Sy.NO 10/6-1 <br/>
-                  <br/>
-                  Opp nithyotsava wedding hall <br/>
-                  <br/>
-                  Doddaballapur Main Road <br/>
-                  <br/>
-                  Yelahanka,Bengaluru, <br/>
-                  <br/>
-                  Karnataka 560064
+                  <span className="font-extrabold text-white block mb-1">Office Address</span>
+                  Exposys Data Labs <br />
+                  #56, YVR Cave, 4th Floor <br />
+                  Kakolu Road, Rajanukunte <br />
+                  Yelahanka, Bengaluru – 560064
                 </div>
               </div>
             </div>
@@ -934,23 +928,23 @@ export default function App() {
             <div className="space-y-3 pt-3 border-t border-slate-800">
               <span className="text-slate-500 font-extrabold select-none text-[10px] uppercase tracking-wider block">Connect with us</span>
               <div className="flex flex-col gap-2">
-                <a href="https://wa.me/917795207065" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-green-400 transition-colors">
+                <a href="https://api.whatsapp.com/send?phone=917795207065" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-green-400 transition-colors">
                   <MessageCircle className="w-4 h-4 text-green-500 shrink-0" />
                   <span>WhatsApp</span>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-blue-400 transition-colors">
+                <a href="https://www.facebook.com/Exposysdatalabs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-blue-400 transition-colors">
                   <Facebook className="w-4 h-4 text-blue-500 shrink-0" />
                   <span>Facebook</span>
                 </a>
-                <a href="https://linkedin.com/company/exposys-data-labs" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-cyan-400 transition-colors">
+                <a href="https://www.linkedin.com/company/upchat-technologies/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-cyan-400 transition-colors">
                   <Linkedin className="w-4 h-4 text-cyan-500 shrink-0" />
                   <span>LinkedIn</span>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-red-400 transition-colors">
+                <a href="https://www.youtube.com/channel/UCCdSuhhzWqmj9h9uyEl-JSA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-red-400 transition-colors">
                   <Youtube className="w-4 h-4 text-red-500 shrink-0" />
                   <span>YouTube</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-pink-400 transition-colors">
+                <a href="https://www.instagram.com/exposysdatalabs/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 text-slate-450 text-slate-400 hover:text-pink-400 transition-colors">
                   <Instagram className="w-4 h-4 text-pink-500 shrink-0" />
                   <span>Instagram</span>
                 </a>
